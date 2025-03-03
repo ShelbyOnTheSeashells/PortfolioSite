@@ -8,25 +8,36 @@
 
     <div class="wrap">
         <div class="header">
-            <h1>LEXI SINGSON</h1>
-            <img src="">
+            <div class="custom-shape-divider-top-1740902966">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                </svg>
+            </div>
+
+            <img src="assets/art/ui/myname.PNG" class="header-logo">
+            <hr style="margin: -5px 40px;" class="border magenta-border">
             <h1>ARTIST & PROGRAMMER</h1>
+            
             <div class="header-quote-card">
-                <img src="" style="width: 100px; background-color: red; height: 100px;">
-                <div class="header-quote-card-bubble">
-                    <h2>Been coding since 2017'</h>
+                <img src="assets/art/header-icon.PNG" style="width: 100px; background-color: red; height: 100px; border: 4px solid; border-radius: 5px;">
+                <div style="position: relative;">
+                    <img src="assets/art/ui/bubble-point.PNG" style="width: 30px; position: absolute; left: -15px; top: 36px;">
+                    <div class="header-quote-card-bubble">
+                        <h>Been coding since 2017'</h>
+                    </div>
                 </div>
                 
+        
             </div>
             
             <nav>
                 <a href="">ABOUT ME</a>
                 <a href="">JOURNAL</a>
                 <a href="">ARTWORKS</a>
-                <a href="">GAMES</a>
+                <a href="">PROJECTS</a>
             </nav>
         </div>
-        <hr style="border-top: 2px solid; margin: 5px 30px;">
+        <hr class="border magenta-border">
         <section class="journal">
             <!-- Journal Post -->
             <div class="journal-container">
@@ -36,7 +47,7 @@
                      <div class="journal-content-information">
                         <h>Site? Created!</h> <h class="journal-content-information-date">3/1/2025</h>
                      </div>
-                    
+                     <hr style="margin: -5px 2px;" class="border orange-border">
                      <p>Yellooo.</p>
                 </div>
                 <div>
@@ -51,6 +62,12 @@
         * {
             padding: 0;
             margin: 0;
+            font-family: Margarine;
+        }
+
+        @font-face {
+            font-family: Margarine;
+            src: url(assets/font/Margarine/Margarine-Regular.ttf);
         }
 
         img {
@@ -61,11 +78,14 @@
         h1 {
             font-size: 26px;
         }
+        
+        hr {
+            border-top: 30px solid; margin: -0px 27px;
+        }
 
         body {
             width: 100%;
             display: flex;
-            flex-direction: center;
             justify-content: center;
             background-color: #ffebb4;
         }
@@ -73,19 +93,75 @@
         ::-webkit-scrollbar {
             display: none;
         }
+
         .wrap {
             align-self: center;
             text-align: center;
             margin: 40px auto;
         }
 
+        /* Borders */
+        .magenta-border {
+            border-image: url(assets/art/ui/magenta-border.PNG) round;
+        }
+
+        .orange-border {
+            border-image: url(assets/art/ui/orange-border.PNG) round;
+            border-top: 20px solid;
+        }
+
+        .border {
+            border-image-slice: 90;
+        }
+
+
+        
          /* Header */
+         .custom-shape-divider-top-1740902966 {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-top-1740902966 svg {
+            position: relative;
+            display: block;
+            width: calc(300% + 1.3px);
+            height: 252px;
+        }
+
+        .custom-shape-divider-top-1740902966 .shape-fill {
+            fill: #CAD276;
+        }
+
+        /** For tablet devices **/
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .custom-shape-divider-top-1740902966 svg {
+                width: calc(283% + 1.3px);
+                height: 291px;
+            }
+        }
+
+        /** For mobile devices **/
+        @media (max-width: 767px) {
+            .custom-shape-divider-top-1740902966 svg {
+                width: calc(273% + 1.3px);
+                height: 247px;
+            }
+        }
         .header-quote-card {
+            width: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 10px 0;
+            margin: 20px auto;
         }
+
         .header-quote-card * {
             margin: 0px 10px;
         }
@@ -93,12 +169,26 @@
         .header * {
             color: #8f325c;
         }
+        
+        .header-logo {
+            width: 300px;
+        }
 
         .header-quote-card-bubble {
-            background-color: black;
-            width: 100px;
-            height: 100px;
+            background-color: #3a2859;
+            width: 176px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            padding: 25px 15px;
         }
+
+        .header-quote-card-bubble * {
+            color: #ffebb4;
+        }
+
+        
         nav * {
             text-decoration: none;
             margin: 0px 5px;
@@ -131,6 +221,7 @@
             word-wrap: break-word;
             word-break: break-all;
             width: 100%;
+            border-image: url(assets/art/ui/orange-border.PNG);
         }
 
         .journal-container-content p {
@@ -147,9 +238,7 @@
         }
 
         .journal-container-icon {
-            background-color: blanchedalmond;
-            min-width: 75px;
-            height: 75px;
+            height: 80px;
         }
         
     </style>
