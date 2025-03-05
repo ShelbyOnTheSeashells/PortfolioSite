@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>Lexi Singson</title>
+        <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
@@ -15,19 +16,17 @@
             </div>
 
             <img src="assets/art/ui/myname.PNG" class="header-logo">
-            <hr style="margin: -5px 40px;" class="border magenta-border">
+            <hr class="border magenta-border header-logo-hr">
             <h1>ARTIST & PROGRAMMER</h1>
             
             <div class="header-quote-card">
-                <img src="assets/art/header-icon.PNG" style="width: 100px; background-color: red; height: 100px; border: 4px solid; border-radius: 5px;">
+                <img src="assets/art/header-icon.PNG" class ="header-quote-card-icon"style="">
                 <div style="position: relative;">
-                    <img src="assets/art/ui/bubble-point.PNG" style="width: 30px; position: absolute; left: -15px; top: 36px;">
+                    <img src="assets/art/ui/bubble-point.PNG" class="header-quote-card-bubble-point">
                     <div class="header-quote-card-bubble">
                         <h>Been coding since 2017'</h>
                     </div>
                 </div>
-                
-        
             </div>
             
             <nav>
@@ -41,13 +40,13 @@
         <section class="journal">
             <!-- Journal Post -->
             <div class="journal-container">
-                <img src="" alt="me" class="journal-container-icon">
+                <img src="assets/art/wittle-lexi.PNG" alt="me" class="journal-container-icon">
                 <div class="journal-container-content">
                     <!-- Post Content -->
                      <div class="journal-content-information">
                         <h>Site? Created!</h> <h class="journal-content-information-date">3/1/2025</h>
                      </div>
-                     <hr style="margin: -5px 2px;" class="border orange-border">
+                     <hr class="border orange-border">
                      <p>Yellooo.</p>
                 </div>
                 <div>
@@ -57,189 +56,4 @@
             <!-- Journal End-->
         </section>
     </div>
-
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: Margarine;
-        }
-
-        @font-face {
-            font-family: Margarine;
-            src: url(assets/font/Margarine/Margarine-Regular.ttf);
-        }
-
-        img {
-            user-select: none;
-            pointer-events: none;
-        }
-
-        h1 {
-            font-size: 26px;
-        }
-        
-        hr {
-            border-top: 30px solid; margin: -0px 27px;
-        }
-
-        body {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            background-color: #ffebb4;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        .wrap {
-            align-self: center;
-            text-align: center;
-            margin: 40px auto;
-        }
-
-        /* Borders */
-        .magenta-border {
-            border-image: url(assets/art/ui/magenta-border.PNG) round;
-        }
-
-        .orange-border {
-            border-image: url(assets/art/ui/orange-border.PNG) round;
-            border-top: 20px solid;
-        }
-
-        .border {
-            border-image-slice: 90;
-        }
-
-
-        
-         /* Header */
-         .custom-shape-divider-top-1740902966 {
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            transform: rotate(180deg);
-        }
-
-        .custom-shape-divider-top-1740902966 svg {
-            position: relative;
-            display: block;
-            width: calc(300% + 1.3px);
-            height: 252px;
-        }
-
-        .custom-shape-divider-top-1740902966 .shape-fill {
-            fill: #CAD276;
-        }
-
-        /** For tablet devices **/
-        @media (min-width: 768px) and (max-width: 1023px) {
-            .custom-shape-divider-top-1740902966 svg {
-                width: calc(283% + 1.3px);
-                height: 291px;
-            }
-        }
-
-        /** For mobile devices **/
-        @media (max-width: 767px) {
-            .custom-shape-divider-top-1740902966 svg {
-                width: calc(273% + 1.3px);
-                height: 247px;
-            }
-        }
-        .header-quote-card {
-            width: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto;
-        }
-
-        .header-quote-card * {
-            margin: 0px 10px;
-        }
-
-        .header * {
-            color: #8f325c;
-        }
-        
-        .header-logo {
-            width: 300px;
-        }
-
-        .header-quote-card-bubble {
-            background-color: #3a2859;
-            width: 176px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            text-align: left;
-            padding: 25px 15px;
-        }
-
-        .header-quote-card-bubble * {
-            color: #ffebb4;
-        }
-
-        
-        nav * {
-            text-decoration: none;
-            margin: 0px 5px;
-            color: #8f325c;
-        }
-
-
-        /* Journal Section */
-        .journal {
-            width: 350px;
-            margin: auto;
-        }
-
-        .journal-container {
-            margin: 20px auto;
-            background-color: #cad276;
-
-            max-width: 100%;
-            min-height: 140px;
-            border-radius: 4px;
-            box-shadow: 0px 8px #b1643c;
-            
-            display: flex;
-            padding: 10px;
-            color: #b1643c;
-        }
-
-        .journal-container-content {
-            text-align: left;
-            word-wrap: break-word;
-            word-break: break-all;
-            width: 100%;
-            border-image: url(assets/art/ui/orange-border.PNG);
-        }
-
-        .journal-container-content p {
-            margin-left: 10px;
-        }
-
-        .journal-content-information {
-            margin: 5px 0px;
-            font-weight: bold;
-            display: flex;
-            height: 20px;
-            justify-content: space-between;
-            width: inherit;
-        }
-
-        .journal-container-icon {
-            height: 80px;
-        }
-        
-    </style>
 </html>
