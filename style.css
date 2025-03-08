@@ -19,7 +19,9 @@ h1 {
 }
 
 hr {
-    border-top: 30px solid; margin: -0px 10px;
+    border-top: 30px solid; margin: -0px auto;
+    width: 100%;
+    max-width: 380px
 }
 
 body {
@@ -37,6 +39,9 @@ body {
     align-self: center;
     text-align: center;
     margin: 40px auto;
+    width: 90%;
+    min-width: 375;
+    max-width: 600px;
 }
 
 /* Borders */
@@ -48,13 +53,12 @@ body {
     border-image: url(assets/art/ui/orange-border.PNG) round;
     border-top: 20px solid;
     margin: -5px 2px;
+    max-width: none;
 }
 
 .border {
     border-image-slice: 90;
 }
-
-
 
  /* Header */
  .custom-shape-divider-top-1740902966 {
@@ -90,7 +94,7 @@ body {
 /** For mobile devices **/
 @media (max-width: 767px) {
     .custom-shape-divider-top-1740902966 svg {
-        width: calc(273% + 1.3px);
+        width: calc(283% + 1.3px);
         height: 247px;
     }
 }
@@ -154,7 +158,7 @@ nav * {
 
 /* Journal Section */
 .journal {
-    width: 350px;
+    width: 100%;
     margin: auto;
 }
 
