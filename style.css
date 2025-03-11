@@ -98,6 +98,7 @@ body {
         height: 247px;
     }
 }
+
 .header-quote-card {
     width: 80%;
     display: flex;
@@ -149,13 +150,52 @@ body {
 }
 
 
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 nav * {
     text-decoration: none;
     margin: 0px 5px;
     color: #8f325c;
+    cursor: pointer;
 }
 
+.nav-shake {
+    animation: nav-wiggle 0.5s infinite;
+    
+}
 
+@keyframes nav-wiggle {
+    0% {rotate: -5deg;}
+  50% {rotate: 5deg;}
+  100% {rotate: -5deg;}
+}
+/*About Me Section */
+
+.about-me-profile {
+    display: grid; grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 485px) {
+    .about-me-profile {
+        display: grid; grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-me-art {
+        margin: auto;
+    }
+}
+.about-me-art {
+    
+    max-width: 200px;
+    /*margin-right: 56px;*/
+}
+
+p {
+    color: #8f325c
+}
 /* Journal Section */
 .journal {
     width: 100%;
