@@ -3,73 +3,105 @@
     <head>
         <title>Lexi Singson</title>
         <link rel="stylesheet" href="style.css">
+        <script src="logic.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="assets/art/wittle-lexi.PNG">
     </head>
 
-    <div class="wrap">
-        <div class="header">
-            <div class="custom-shape-divider-top-1740902966">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-                </svg>
-            </div>
-
-            <img src="assets/art/ui/myname.PNG" class="header-logo">
-            <hr class="border magenta-border header-logo-hr">
-            <h1>ARTIST & PROGRAMMER</h1>
-            
-            <div class="header-quote-card">
-                <img src="assets/art/header-icon.PNG" class ="header-quote-card-icon"style="">
-                <div style="position: relative;">
-                    <img src="assets/art/ui/bubble-point.PNG" class="header-quote-card-bubble-point">
-                    <div class="header-quote-card-bubble">
-                        <h>Been coding since 2017'</h>
+    <body>
+        <div class="wrap">
+            <div class="header">
+                <div class="custom-shape-divider-top-1740902966">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+    
+                <img src="assets/art/ui/myname.PNG" class="header-logo">
+                <hr class="border magenta-border header-logo-hr">
+                <h1>ARTIST & PROGRAMMER</h1>
+                
+                <div class="header-quote-card">
+                    <img src="assets/art/header-icon.PNG" class ="header-quote-card-icon"style="">
+                    <div style="position: relative;">
+                        <img src="assets/art/ui/bubble-point.PNG" class="header-quote-card-bubble-point">
+                        <div class="header-quote-card-bubble">
+                            <h>Been coding since 2017'</h>
+                        </div>
                     </div>
                 </div>
+                <nav>
+                    <p class="nav-button" onclick="NavButton(this.id)" id="about-me-button" sectionID = "about-me">ABOUT ME</p>
+                    <p class="nav-button" onclick="NavButton(this.id)" id="journal-button" sectionID = "journal">JOURNAL</p>
+                    <p class="nav-button" onclick="NavButton(this.id)" id="artworks-button" sectionID = "artworks">ARTWORKS</p>
+                    <p class="nav-button" onclick="NavButton(this.id)" id="projects-button" sectionID = "projects">PROJECTS</p>
+                    <p class="nav-button" onclick="NavButton(this.id)" id="drawing-button" sectionID = "drawing">?</p>
+                    
+                </nav>
             </div>
+            <hr class="border magenta-border">
             
-            <nav>
-                <p class="nav-shake">ABOUT ME</p>
-                <p class="nav-shake">JOURNAL</p>
-                <p class="nav-shake">ARTWORKS</p>
-                <p class="nav-shake">PROJECTS</p>
+            <!--About Me-->
+            <section class="about-me section"  id="about-me">
                 
-            </nav>
+                <div class="about-me-profile">
+                <img src="assets/art/about_me.PNG" class="about-me-art">
+                <p style="align-content: center; min-width: 200px;"> Hello! My name is Lexi. I'm a programmer and an upcoming Computer Science Student specializing in Software Engineering! I like creating stuff as well as studying new things.
+                </p>
+                </div>
+            </section>
+    
+            <!--Journal Section-->
+            <section class="journal section hidden" id="journal">
+                <!-- Journal Post -->
+                <div class="journal-container">
+                    <img src="assets/art/wittle-lexi.PNG" alt="me" class="journal-container-icon">
+                    <div class="journal-container-content">
+                        <!-- Post Content -->
+                         <div class="journal-content-information">
+                            <h>Site? Created!</h> <h class="journal-content-information-date">3/1/2025</h>
+                         </div>
+                         <hr class="border orange-border">
+                         <p>Yellooo.</p>
+                    </div>
+                    <div>
+    
+                    </div>
+                </div>
+                <!-- Journal End-->
+            </section>
+    
+            <!-- Artworks -->
+            <section class="artworks section hidden" id="artworks">
+                <div class="artworks-grid">
+                    <img src="assets/art/art-portfolio/Gay-Dragon.PNG" class="artworks-art-cover">
+                    <img src="assets/art/art-portfolio/Laios.PNG" class="artworks-art-cover">
+                    <img src="assets/art/art-portfolio/Senshi.PNG" class="artworks-art-cover">
+                    <img src="assets/art/art-portfolio/Group-Commission.PNG" class="artworks-art-cover">
+                    <img src="assets/art/art-portfolio/Webfishing.PNG" class="artworks-art-cover">
+                    <img src="assets/art/art-portfolio/Caution-Below.PNG" class="artworks-art-cover">
+                </div>
+            </section>
+            <!-- Artworks End -->
+
+            <!--Projects-->
+
+            <!--Projects End-->
+
+            <!--Draw-A-Thing-->
+            <section class="drawing section hidden" id="drawing">
+
+                <p>Give me ur art (anonymously)</p>
+                <canvas id="canvas" width="500" height="300"></canvas>
+                <button id="back">restart</button>
+                
+                <div class="Drawing-Button-Panel"></div>
+            </section>
+                
+            <!--Draw-A-Thing End-->
         </div>
-        <hr class="border magenta-border">
         
-        <!--About Me-->
-        <section class="about-me" style="width: 100%; overflow: hidden;">
-            
-            <div class="about-me-profile">
-            <img src="assets/art/about_me.PNG" class="about-me-art">
-            <p style="align-content: center; min-width: 200px;"> My name is Lexi! I like to code and draw. I also like to research and study new things! Blah blah blah, 
-                placeholder placeholder. I am a freelancer artist and a hobby programmer
-                blah blah blah blah blah blah bla
-            </p>
-            </div>
-        </section>
+    </body>
 
-        <!--Journal Section-->
-        <section class="journal" style="display: none">
-            <!-- Journal Post -->
-            <div class="journal-container">
-                <img src="assets/art/wittle-lexi.PNG" alt="me" class="journal-container-icon">
-                <div class="journal-container-content">
-                    <!-- Post Content -->
-                     <div class="journal-content-information">
-                        <h>Site? Created!</h> <h class="journal-content-information-date">3/1/2025</h>
-                     </div>
-                     <hr class="border orange-border">
-                     <p>Yellooo.</p>
-                </div>
-                <div>
-
-                </div>
-            </div>
-            <!-- Journal End-->
-        </section>
-
-        
-    </div>
+    
 </html>
