@@ -44,6 +44,7 @@ window.onload = function() {
     //data.push(context.getImageData(0, 0, canvas.clientWidth, canvas.clientHeight));
     
     function startLine(e) {
+        alert("toucing");
         drawing = true;
         draw(e);
     }
