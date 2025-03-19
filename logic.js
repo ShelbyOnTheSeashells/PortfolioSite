@@ -2,19 +2,46 @@
 
 var currentSection 
 
+window.addEventListener('DOMContentLoaded', function () {
+    var hello = this.document.querySelector("canvas");
+    this.alert(hello);
+    this.alert(window.getComputedStyle(hello).width);
+});
 
 /*This code will trigger upon when the website is opened*/
 window.onload = function() {
     currentSection = document.getElementById("about-me");
     back = document.getElementById("back");
-    const canvas = document.getElementById("canvas");
+    const canvas = document.querySelector("canvas");
     const context = canvas.getContext("2d");
 
-    context.canvas.innerWidth = window.innerWidth;
+    //Customization
+    const colorPicker = document.getElementById("colorPicker");
+    const lineWidth = document.getElementById("lineWidth");
+    //alert(colorPicker);
+    //alert(canvas.getBoundingClientRect().x);
+    
     context.canvas.innerHeight = window.innerHeight;
     let drawing = false;
     let data = [];
-    data.push(context.getImageData(0, 0, context.canvas.innerWidth, context.canvas.innerHeight));
+    
+    let lineSize = '5';
+    let color = 'black';
+
+    
+    function adjustCanvas() {
+        //alert("aaa");
+        let previous = context.getImageData(0, 0, context.canvas.clientWidth, context.canvas.innerHeight);
+        context.canvas.width = canvas.clientWidth;
+        context.canvas.innerHeight = window.innerHeight;
+        
+        context.putImageData(previous, 0, 0);
+        //alert(canvas.clientWidth);
+    }
+
+    
+    
+    //data.push(context.getImageData(0, 0, canvas.clientWidth, canvas.clientHeight));
     
     function startLine(e) {
         drawing = true;
@@ -24,27 +51,23 @@ window.onload = function() {
     function endLine(e) {
         drawing = false;
         context.beginPath();
-        data.push(context.getImageData(0, 0, context.canvas.innerWidth, context.canvas.innerHeight));
+        //data.push(context.getImageData(0, 0, context.canvas.innerWidth, context.canvas.innerHeight));
     }
 
     function draw(e) {
+        
         if (!drawing) return;
-        context.lineWidth = 5;
+        
+        context.lineWidth = lineSize;
         context.lineCap = 'round';
-        context.strokeStyle = "black";
+        context.strokeStyle = color;
         
         
         
-        context.lineTo(e.offsetX, e.offsetY);
+        context.lineTo(e.clientX - canvas.getBoundingClientRect().x, e.clientY - canvas.getBoundingClientRect().y);
         context.stroke();
         context.beginPath();
-        context.moveTo(e.offsetX, e.offsetY);
-    }
-    
-    function adjustCanvas() {
-        context.canvas.innerWidth = window.innerWidth;
-        context.canvas.innerHeight = window.innerHeight;
-        console.log("Resizing");
+        context.moveTo(e.clientX - canvas.getBoundingClientRect().x, e.clientY - canvas.getBoundingClientRect().y);
     }
 
     function test() {
@@ -55,13 +78,27 @@ window.onload = function() {
         
     }
 
+    
+    function changeColor () {
+        color = colorPicker.value;
+    }
+
+    function changeWidth () {
+        console.log("hh");
+        lineSize = lineWidth.value;
+    }
     // Event Listeners
     canvas.addEventListener("mousedown", startLine);
     canvas.addEventListener("mouseup", endLine);
     canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("touchstart", startLine);
+    canvas.addEventListener("touchend", endLine);
+    canvas.addEventListener("touchmove", draw);
     canvas.addEventListener("mouseleave", endLine);
     window.addEventListener("resize", adjustCanvas);
     back.addEventListener("click", test);
+    colorPicker.addEventListener("change", changeColor);
+    lineWidth.addEventListener("change", changeWidth);
 
     
 }
